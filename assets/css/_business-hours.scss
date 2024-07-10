@@ -1,0 +1,37 @@
+.business-hours {
+    justify-content: flex-start;
+
+    &__time-group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__day {
+        min-width: 90px;
+        font-weight: bold;
+    }
+
+    &__time {
+        width: 90px
+    }
+
+    &__am-pm {
+        width: 60px
+    }
+
+    &__dash {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .components-base-control {
+        flex-grow: 0;
+        margin-right: 0.25rem;
+    }
+
+    .components-toggle-control {
+        margin-bottom: 0;
+        padding-left: 1rem;
+    }
+}

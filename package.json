@@ -1,0 +1,34 @@
+{
+  "name": "@builtnorth/wp-admin-dashboard",
+  "version": "1.0.9",
+  "description": "NPM package for global and common code used across various WordPress admin screens for BuiltNorth plugins.",
+  "main": "index.js",
+  "scripts": {
+        "build": "wp-scripts build --webpack-src-dir=assets",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:md:docs": "wp-scripts lint-md-docs",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start --webpack-src-dir=assets",
+		"test:e2e": "wp-scripts test-e2e",
+		"test:unit": "wp-scripts test-unit-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:builtnorth/npm-wp-admin-dashboard.git"
+  },
+  "author": "Built North Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/builtnorth/npm-wp-admin-dashboard/issues"
+  },
+  "homepage": "https://bitbucket.org/builtnorth/built-admin-dashboard#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.19.0"
+  }
+}
