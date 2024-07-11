@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:builtnorth/npm-wp-admin-dashboard.git"
+    "url": "git+:https://github.com/builtnorth/wp-admin-dashboard.git"
   },
   "author": "Built North",
 "license": "GPL-2.0-or-later",
   "bugs": {
-    "url": "https://github.com/builtnorth/npm-wp-admin-dashboard/issues"
+    "url": "https://github.com/builtnorth/wp-admin-dashboard.git/issues"
   },
-  "homepage": "https://bitbucket.org/builtnorth/built-admin-dashboard#readme",
+  "homepage": "https://github.com/builtnorth/wp-admin-dashboard?tab=readme-ov-file#readme",
   "devDependencies": {
     "@wordpress/scripts": "^26.19.0"
   }
