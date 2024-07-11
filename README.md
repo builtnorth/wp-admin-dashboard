@@ -1,4 +1,4 @@
-# Built North WP Admin Dashbnoard
+# Built North WP Admin Dashboard
 NPM package for global and common code used across various WordPress admin screens for Built North plugins.
 
 ## Installation
