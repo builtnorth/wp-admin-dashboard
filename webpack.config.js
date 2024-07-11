@@ -1,15 +1,25 @@
-
-const path = require("path");
-
-// Import the original config from the @wordpress/scripts package.
-const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
-
-// Import the helper to find and generate the entry points in the src directory
-const { getWebpackEntryPoints } = require( '@wordpress/scripts/utils/config' );
+const defaultConfig = require('@wordpress/scripts/config/webpack.config');
 
 module.exports = {
-	...defaultConfig,
-	entry: { 
-        ...getWebpackEntryPoints(),
-      }
+    ...defaultConfig,
+    module: {
+        ...defaultConfig.module,
+        rules: [
+            ...defaultConfig.module.rules,
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: require.resolve('babel-loader'),
+                    options: {
+                        presets: [
+                            require.resolve('@babel/preset-env'),
+                            require.resolve('@babel/preset-react')
+                        ],
+                        cacheDirectory: true,
+                    }
+                }
+            }
+        ]
+    }
 };

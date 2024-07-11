@@ -1,0 +1,23 @@
+/*
+------------------------------------------------------------------
+Social Media
+
+@package BuiltNorthWPAdminDashboard
+@since BuiltNorthWPAdminDashboard 1.1.0
+------------------------------------------------------------------
+*/
+
+ .social-media{
+    align-items: flex-end;
+
+    svg {
+        fill: #a9a9ae;
+        background-color: #f0f0f1;
+        height: 1.25rem;
+        width: 1.25rem;
+        border: 1px solid #949494;
+        padding: 0.3125rem;
+        margin-bottom: 1rem;
+        margin-left: -16px;
+    }
+ }

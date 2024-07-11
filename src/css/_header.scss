@@ -1,0 +1,69 @@
+/*
+------------------------------------------------------------------
+Admin Header
+
+@package BuiltNorthWPAdminDashboard
+@since BuiltNorthWPAdminDashboard 1.0.0
+------------------------------------------------------------------
+*/
+
+.built-dashboard-header {
+    background-color: var(--color--white);
+    box-shadow: 0 1px 0 rgba(213, 213, 213, .5), 0 1px 2px #eeeeee;
+    padding: 1rem 0.75rem;
+    margin-bottom: 2rem;
+    margin-left: -2em;
+
+    h1 {
+          font-size: calc(14px);
+    }
+
+    &__title {
+        margin-left: 1rem;
+
+        .sub-title {
+            padding-top: 5px;
+        }
+    }
+
+    &__icon {
+        .dashicons {
+            height: 28px;
+            width: 28x;
+            font-size: 28px;
+            color: #acb1c8;
+        }
+        svg {
+            height: 36px;
+            width: 36px;
+            fill: #acb1c8;
+        }
+    }
+
+    .built-wrap {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+
+        .icon-wrap{
+            background-color: #f0f0f1;
+            line-height: 0;
+            border-radius: 3px;
+            display: block;
+            svg{
+                line-height: 0;
+                padding: 4px;
+                fill: #8a8b95;
+            }
+            &:hover {
+                background-color: var(--wp-admin-theme-color);
+                svg {
+                    fill: #fff;
+                }
+            }
+        }

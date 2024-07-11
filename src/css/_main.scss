@@ -1,0 +1,566 @@
+/*
+------------------------------------------------------------------
+Main Styles for BuiltNorthWPAdminDashboard
+@package BuiltNorthWPAdminDashboard
+@since BuiltNorthWPAdminDashboard 1.0.0
+------------------------------------------------------------------
+*/
+
+// Global Styles
+img {
+    width: 100%;
+    height: auto;
+}
+
+// Utility Classes
+.component-is-hidden {
+    display: none;
+}
+
+.grid-fill {
+    width: 100%;
+}
+
+// Loading Spinner
+.built-loading {
+    margin: 100px;
+    text-align: center;
+
+    .components-spinner {
+        display: block;
+        margin: 20px auto;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+// Wrapper
+.built-wrap {
+    position: relative;
+    margin-left: 50px;
+    max-width: 1400px;
+    padding-right: 50px;
+    width: auto;
+
+    @media only screen and (max-width: 1000px) {
+        margin-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+// Grid System
+.built-grid {
+    display: grid;
+    gap: 0 1.5rem;
+    width: 100%;
+
+    &--has-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &--has-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.built-dashboard-grid {
+    &--has-3 {
+        @media only screen and (max-width: 1400px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+// Card Styles
+.built-card {
+    background-color: #fff;
+    color: #1e1e1e;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+    border-radius: 1px;
+    padding: 16px 24px;
+    margin-bottom: 1.5rem;
+
+    h2 {
+        color: #1d2327;
+        font-size: 1.3em;
+        margin: 1em 0;
+    }
+
+    .components-button {
+        margin: 0.5rem 0 0.75rem;
+    }
+}
+
+// Panel Styles
+.components-panel {
+    background: none;
+    border: none;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.panel-description {
+    margin-bottom: 1.5rem;
+}
+
+.components-card {
+   margin-bottom: 1.5rem;
+   width: 100%;
+}
+
+.components-flex-block {
+    align-self: stretch;
+    display: flex;
+}
+
+.components-panel__body {
+    background: #fff;
+    border: 1px solid #e2e4e7;
+    margin: 0;
+}
+
+.components-panel__body-title {
+    button {
+        font-size: 16px;
+    }
+}
+
+.components-divider {
+    opacity: 0.15;
+}
+
+.components-panel__row {
+    align-items: flex-start;
+
+    > div {
+        flex-grow: 1;
+        margin: 0.5rem 1rem 0.5rem 0;
+    }
+
+    &:not(.business-hours) {
+        > div, > p {
+            width: 100%;
+            margin: 0.5rem 0;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+// Dashboard Block
+.built-dashboard-block {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    &__icon {
+        fill: var(--color--light-gray);
+    }
+
+    &__description {
+        margin-bottom: auto;
+    }
+
+    &__link-list {
+        padding-top: 0;
+        .link-list__item svg {
+            margin-left: 4px;
+            height: 21px;
+            width: 21px;
+        }
+    }
+}
+
+// Dashboard Panel
+.built-dashboard-panel {
+    .components-panel__body {
+        &.is-opened {
+            padding-bottom: 2rem;
+        }
+        .components-panel__body-toggle {
+            padding: 1.25rem 1rem 1.25rem 2rem;
+            font-size: 16px;
+            .components-panel__arrow {
+                right: 1rem;
+            }
+        }
+        .components-panel__row {
+            padding: 0 1em 0 1rem;
+			gap: 20px;
+        }
+        &-title {
+            margin-bottom: 0.75rem;
+        }
+        h3 {
+            font-size: 14px;
+        }
+    }
+}
+
+// Tab Panel
+.built-tab-panel {
+    padding-top: 2rem;
+
+    .components-tab-panel__tabs .built-tab {
+        margin-right: 2rem;
+        padding-bottom: 1rem;
+        font-size: 12px;
+    }
+
+    .built-tab {
+        height: auto;
+        flex-direction: column;
+        display: flex;
+        padding: 0 0 0.5rem 0;
+
+        &.is-active-tab:after {
+            height: 3px;
+        }
+    }
+
+    .built-save-button {
+        position: absolute;
+        top: -5.35rem;
+        right: 1.5rem;
+        margin-top: 0;
+    }
+
+    .components-tab-panel__tab-content {
+        border-top: 1px solid #e2e4e7;
+        padding-top: 2rem;
+    }
+}
+
+// Snackbar Notifications
+.components-snackbar-list {
+    width: auto;
+    bottom: 20px;
+    position: fixed;
+    right: 0;
+}
+
+.components-snackbar-list__notice-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.built-admin__notices .components-snackbar {
+    bottom: 2rem;
+    position: relative;
+    right: 2rem;
+}
+
+// Save Button
+.built-save-button {
+    margin: 1.5rem 0 3rem;
+    .message {
+        padding: 0 15px;
+        position: relative;
+        top: 9px;
+        &.update-failed {
+            color: #810f0f;
+        }
+    }
+}
+
+// Form Controls
+.components-text-control__input,
+.components-text-control__input[type="color"],
+.components-text-control__input[type="date"],
+.components-text-control__input[type="datetime-local"],
+.components-text-control__input[type="datetime"],
+.components-text-control__input[type="email"],
+.components-text-control__input[type="month"],
+.components-text-control__input[type="number"],
+.components-text-control__input[type="password"],
+.components-text-control__input[type="tel"],
+.components-text-control__input[type="text"],
+.components-text-control__input[type="time"],
+.components-text-control__input[type="url"],
+.components-text-control__input[type="week"] {
+    padding: 10px;
+}
+
+.is-page-select-button {
+    margin-top: 32px;
+}
+
+// Map Styles
+.map-container {
+    height: 400px;
+}
+
+.map-panel-row {
+    align-items: center;
+}
+
+.map-stats {
+    background: #f0f0f0;
+    border-radius: 3px;
+    padding: 4px 8px;
+    margin: 0;
+    li {
+        margin: 0 10px 0 0;
+        font-size: 11px;
+        font-family: monospace;
+        display: inline-block;
+        span {
+            font-weight: 700;
+        }
+        &:after {
+            content: ' | ';
+            opacity: 0.25;
+        }
+        &:last-child {
+            margin-right: 0;
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+// Info Notice
+.built-info-notice {
+    background: #f0f0f0;
+    border: none;
+}
+
+.built-message {
+    padding-bottom: 15px;
+}
+
+// Inline List Control
+.inline-list-control {
+    .components-flex {
+        flex-direction: unset;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+}
+
+// SEO Panel
+.built-seo-panel {
+    .components-panel__row > div {
+        width: 100%;
+    }
+}
+
+
+// Dashboard Specific Styles
+    .built-wrap {
+        margin-left: 50px;
+        max-width: 1400px;
+        padding-right: 50px;
+        width: auto;
+
+        @media only screen and (max-width: 1000px) {
+            margin-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    .components-divider {
+        opacity: 0.15;
+    }
+
+    // Brand Settings
+    .brand-settings {
+        .upload-container {
+            display: flex;
+            flex-direction: column;
+            align-items: self-end;
+            width: 100%;
+        }
+
+        .favicon-flexblock {
+            justify-content: flex-end;
+        }
+
+        .colors-flexblock {
+            align-items: center;
+        }
+
+        .image-wrap {
+            border: 2px dashed #d7d7dd;
+            border-radius: 6px;
+            margin-bottom: 16px;
+
+            &--logo {
+                padding: 36px;
+                width: calc(100% - 72px);
+            }
+
+            &--favicon {
+                aspect-ratio: 1;
+                width: 82px;
+                padding: 24px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .logo-title {
+            margin-top: 1rem;
+        }
+
+        .logo-placeholder {
+            min-height: 100px;
+            width: 100%;
+        }
+        .favicon-placeholder {
+            height: 100%;
+        }
+    }
+
+    // Business Hours
+    .business-hours {
+        min-height: 70px;
+        align-items: center;
+
+        &__time-group {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        &__day {
+            min-width: 120px;
+            font-weight: 500;
+        }
+
+        &__time {
+            width: 75px;
+        }
+    
+        &__am-pm {
+            width: 55px;
+        }
+
+        &__dash {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .components-toggle-control {
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    // Social Media
+    .social-media {
+        align-items: flex-end;
+
+        svg {
+            fill: #a9a9ae;
+            background-color: #f0f0f1;
+            height: 1.25rem;
+            width: 1.25rem;
+            border: 1px solid #949494;
+            padding: 0.3125rem;
+            margin-bottom: 1rem;
+            margin-left: -16px;
+        }
+    }
+
+    // Dashboard Header
+    .built-dashboard-header {
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 14px;
+        }
+
+        &__title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .icon {
+                height: 30px;
+                padding-right: 0.35rem;
+                svg {
+                    height: 30px;
+                    width: 30px;
+                    fill: var(--wp-admin-theme-color);
+                }
+            }
+        }
+    }
+
+    // Icon Wrap
+    .icon-wrap {
+        background-color: #f0f0f1;
+        line-height: 0;
+        border-radius: 3px;
+        display: block;
+        svg {
+            line-height: 0;
+            padding: 4px;
+            fill: #8a8b95;
+        }
+        &:hover {
+            background-color: var(--wp-admin-theme-color);
+            svg {
+                fill: #fff;
+            }
+        }
+    }
+
+    // Dashboard Welcome
+    .built-dashboard-welcome {
+        margin-bottom: 24px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        &__title {
+            margin: 0.25rem 0 0.5rem 0;
+            font-size: 2rem;
+        }
+    }
+
+    // Integrations & Tools
+    .integration {
+        margin-bottom: 0;
+
+        &__logo {
+            max-height: 32px;
+            max-width: 32px;
+        }
+    }
+
+    // Privacy & Accessibility
+    .privacy,
+    .accessibility {
+        &__or {
+            text-transform: uppercase;
+            margin-top: 38px;
+            padding: 0 28px 0 10px;
+        }
+
+        &__button {
+            margin-top: 30px;
+        }
+    }
+
+    // Page Select
+    .is-page-select {
+        align-items: flex-start;
+        &-button {
+            margin-top: 32px;
+        }
+    }

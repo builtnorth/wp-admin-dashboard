@@ -11,21 +11,16 @@
  * 
  */
 
+import React from 'react';
+
 /** Import Components */
+import { Flex, FlexItem, Slot, SlotFillProvider } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { PluginArea } from '@wordpress/plugins';
-import { SlotFillProvider, Slot, Fill, Flex, FlexItem} from '@wordpress/components';
-import { Icon, commentContent } from '@wordpress/icons';
-
 
 /** Build Components */
 
-function AdminHeader({
-    pageName,
-    pageIcon,
-    SupportEmail
-}) 
-{
+export const AdminHeader = ({ pageName, pageIcon, SupportEmail }) => {
 
 
 
@@ -44,13 +39,7 @@ function AdminHeader({
                         {/* <span className="sub-title"> { setHubName ? HubName : 'Site Hub' } </span> */}
                         <div className="icon">{pageIcon}</div>
                         <h1 className="title">{ __( `${pageName}`, 'built-admin' ) }</h1>
-                        {SupportEmail}
                     </FlexItem>
-                    {/* {SupportEmail &&  */}
-                        <FlexItem className="built-dashboard-header__right">
-                           <a href="#" className="icon-wrap" aria-label="contact support"><Icon icon={commentContent} /></a>
-                        </FlexItem>
-                    {/* } */}
 
                     <Slot name="DashboardHeaderSlotAfterTitle" />
                     
@@ -63,5 +52,3 @@ function AdminHeader({
 
 }
 
-// Export Component
-export default AdminHeader;

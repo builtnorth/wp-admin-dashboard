@@ -1,0 +1,79 @@
+/*
+------------------------------------------------------------------
+Business Hours
+
+@package BuiltNorthWPAdminDashboard
+@since BuiltNorthWPAdminDashboard 1.0.0
+------------------------------------------------------------------
+*/
+
+.business-hours {
+    justify-content: flex-start;
+
+    &__time-group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__day {
+        min-width: 90px;
+        font-weight: bold;
+    }
+
+    &__time {
+        width: 90px
+    }
+
+    &__am-pm {
+        width: 60px
+    }
+
+    &__dash {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .components-base-control {
+        flex-grow: 0;
+        margin-right: 0.25rem;
+    }
+
+    .components-toggle-control {
+        margin-bottom: 0;
+        padding-left: 1rem;
+    }
+}
+
+.business-hours__time-group {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    
+        .business-hours {
+            min-height: 70px;
+            align-items: center;
+
+            &__day {
+                min-width: 120px;
+                font-weight: 500;
+            }
+
+            &__time {
+                width: 75px
+            }
+        
+            &__am-pm {
+                width: 55px
+            }
+
+            &__dash {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+
+        }
+    
+        .business-hours .components-toggle-control {
+            margin-bottom: 0.25rem;
+        }

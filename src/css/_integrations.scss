@@ -1,0 +1,42 @@
+/*
+------------------------------------------------------------------
+Brand Settings
+
+@package BuiltNorthWPAdminDashboard
+@since BuiltNorthWPAdminDashboard 1.1.0
+------------------------------------------------------------------
+*/
+
+// Integrations & tools
+	.integration {
+		margin-bottom: 0;
+
+		&__logo {
+			max-height: 32px;
+			max-width: 32px;
+		}
+	}
+
+	.privacy,
+	.accessibility {
+
+		&__or {
+			text-transform: uppercase;
+			margin-top: 38px;
+			padding: 0 28px 0 10px;
+		}
+
+		&__button {
+			margin-top: 30px;
+		}
+	}
+
+	.is-page-select {
+		align-items: flex-start;
+		&-button {
+			margin-top: 32px;
+		}
+	}
+
+
+    
