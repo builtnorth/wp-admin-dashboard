@@ -1,5 +1,10 @@
-# NPM Package: [@builtnorth/wp-admin-dashboard] (https://www.npmjs.com/package/@builtnorth/wp-admin-dashboard)
-NPM package for global and common code used across various WordPress admin screens for BuiltNorth plugins.
+# NPM Package: [@builtnorth/wp-admin-dashboard](https://www.npmjs.com/package/@builtnorth/wp-admin-dashboard)
+NPM package for global and common code used across various WordPress admin screens for Built North plugins.
+
+## Installation
+
+1. Run `npm install --save @builtnorth/wp-admin-dashboard` within your WordPress theme or plugin.
+2. Import the relevant component(s) into your file(s) e.g. `import { AdminHeader } from '@builtnorth/wp-admin-dashboard';`
 
 ## Usage & Support
-While you are free to use this package it is intended for internal use at the moment. It also is really only intended to use on out plugins, which are not publicably available at thsi time. Therefore, no level of support is offered.
+While you are free to use this package, it is intended for internal use at the moment. Therefore, no level of support is offered.

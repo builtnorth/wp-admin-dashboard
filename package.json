@@ -1,7 +1,7 @@
 {
   "name": "@builtnorth/wp-admin-dashboard",
   "version": "1.0.9",
-  "description": "NPM package for global and common code used across various WordPress admin screens for BuiltNorth plugins.",
+  "description": "NPM package for global and common code used across various WordPress admin screens for Built North plugins.",
   "main": "index.js",
   "scripts": {
         "build": "wp-scripts build --webpack-src-dir=assets",
@@ -22,8 +22,8 @@
     "type": "git",
     "url": "git+ssh://git@github.com:builtnorth/npm-wp-admin-dashboard.git"
   },
-  "author": "Built North Team",
-  "license": "ISC",
+  "author": "Built North",
+"license": "GPL-2.0-or-later",
   "bugs": {
     "url": "https://github.com/builtnorth/npm-wp-admin-dashboard/issues"
   },
