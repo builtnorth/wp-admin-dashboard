@@ -1,12 +1,19 @@
-import { useSelect } from "@wordpress/data";
-
 /**
+ * ------------------------------------------------------------------
  * AttachmentImage
+ * ------------------------------------------------------------------
  *
  * This component is used to display an image from the media library.
  * It's meant as a JS companion to the PHP function `wp_get_attachment_image()`.
  *
  * @link https://www.briancoords.com/getting-wordpress-media-library-images-in-javascript/
+ */
+
+// WordPress Dependencies
+import { useSelect } from "@wordpress/data";
+
+/**
+ * AttachmentImage
  *
  * @param {object} props
  * @param {number} props.imageId The ID of the image to display.
@@ -42,4 +49,5 @@ function AttachmentImage({ imageId, size = "full" }) {
     return <>{image && <img {...imageAttributes()} />}</>;
 }
 
+// Export Component
 export { AttachmentImage };

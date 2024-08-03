@@ -1,13 +1,22 @@
 /**
- * Media Upload Handler
+ * ------------------------------------------------------------------
+ * Custom Media Upload
+ * ------------------------------------------------------------------
  *
- * @link https://gist.github.com/5ally/633c4142b77d46068d447cceac3dbc99
+ * Uploads media files to the WordPress media library.
+ *
  */
+
+// WordPress Dependencies
 import { MediaUpload } from "@wordpress/block-editor";
 import { Button } from "@wordpress/components";
 
+// Allowed Media Types
 const ALLOWED_MEDIA_TYPES = ["image"];
 
+/**
+ * Custom Media Upload
+ */
 function CustomMediaUpload({
     mediaIDs,
     onSelect,

@@ -1,23 +1,22 @@
 /**
  * ------------------------------------------------------------------
- * Admin Component: Admin Header
+ * Admin Header
  * ------------------------------------------------------------------
  *
- * Adds a spiiner until page has loaded.
- * Does not currently fully work.
- 
- *
+ * This component is used to render the admin header.
  */
 
+// React Dependenices
 import React from "react";
 
-/** Import Components */
+// WordPress Dependencies
 import { Flex, FlexItem, Slot, SlotFillProvider } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { PluginArea } from "@wordpress/plugins";
 
-/** Build Components */
-
+/**
+ * Admin Header
+ */
 function AdminHeader({ pageName, pageIcon, SupportEmail }) {
     return (
         <SlotFillProvider>
@@ -42,4 +41,5 @@ function AdminHeader({ pageName, pageIcon, SupportEmail }) {
     );
 }
 
+// Export Component
 export { AdminHeader };

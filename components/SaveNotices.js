@@ -1,8 +1,19 @@
+/**
+ * ------------------------------------------------------------------
+ * Save Notices
+ * ------------------------------------------------------------------
+ *
+ * Displays the notices on save.
+ */
+
+// WordPress Dependencies
 import { SnackbarList } from "@wordpress/components";
 import { useDispatch, useSelect } from "@wordpress/data";
 import { store as noticesStore } from "@wordpress/notices";
 
-// Notices
+/**
+ * Save Notices
+ */
 function SaveNotices() {
     const notices = useSelect(
         (select) =>
@@ -23,4 +34,5 @@ function SaveNotices() {
     );
 }
 
+// Export Component
 export { SaveNotices };

@@ -1,11 +1,14 @@
 /**
- * External dependencies
+ * ------------------------------------------------------------------
+ * Update Settings
+ * ------------------------------------------------------------------
+ *
+ * Responsible for updating the settings in the database.
  */
+
 import classnames from "classnames";
 
-/**
- * WordPress dependencies
- */
+// WordPress Dependencies
 import { Animate, Button } from "@wordpress/components";
 import { store as coreStore } from "@wordpress/core-data";
 import { dispatch, useDispatch } from "@wordpress/data";
@@ -107,4 +110,5 @@ function UpdateSettings(props) {
     );
 }
 
+// Export Component
 export { UpdateSettings };
