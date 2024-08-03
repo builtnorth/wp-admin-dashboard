@@ -2,29 +2,29 @@
 ------------------------------------------------------------------
 Index
 
-Imports all needed scss files into the .built-dashboard selector.
+Imports all needed scss files into the .polaris-dashboard selector.
 
 @package BuiltNorthWPAdminDashboard
 @since BuiltNorthWPAdminDashboard 1.0.0
 ------------------------------------------------------------------
 */
 
-@import "src/css/_variables";
+@import "./css/_variables";
 
-
-body.toplevel_page_built-dashboard,
-body[class*="dashboard_page_built-"]{
-    ul#adminmenu a.wp-has-current-submenu::after, ul#adminmenu > li.current > a.current::after {
+body.toplevel_page_polaris-dashboard,
+body[class*="dashboard_page_built-"] {
+    ul#adminmenu a.wp-has-current-submenu::after,
+    ul#adminmenu > li.current > a.current::after {
         border-right-color: #ffffff;
     }
 }
 
-.built-dashboard {
-    @import "src/css/_header";
-    @import "src/css/_main";
-    @import "src/css/_notices";
-    @import "src/css/business-hours";
-    @import "src/css/social-media";
-    @import "src/css/brand-settings";
-    @import "src/css/integrations";
+.polaris-dashboard {
+    @import "./css/_header";
+    @import "./css/_main";
+    @import "./css/_notices";
+    @import "./css/business-hours";
+    @import "./css/social-media";
+    @import "./css/brand-settings";
+    @import "./css/integrations";
 }

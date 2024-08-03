@@ -63,7 +63,7 @@ img {
     }
 }
 
-.built-dashboard-grid {
+.polaris-dashboard-grid {
     &--has-3 {
         @media only screen and (max-width: 1400px) {
             grid-template-columns: repeat(2, 1fr);
@@ -108,8 +108,8 @@ img {
 }
 
 .components-card {
-   margin-bottom: 1.5rem;
-   width: 100%;
+    margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 .components-flex-block {
@@ -142,7 +142,8 @@ img {
     }
 
     &:not(.business-hours) {
-        > div, > p {
+        > div,
+        > p {
             width: 100%;
             margin: 0.5rem 0;
             &:last-child {
@@ -153,7 +154,7 @@ img {
 }
 
 // Dashboard Block
-.built-dashboard-block {
+.polaris-dashboard-block {
     margin-bottom: 0;
     padding-bottom: 1rem;
 
@@ -186,7 +187,7 @@ img {
 }
 
 // Dashboard Panel
-.built-dashboard-panel {
+.polaris-dashboard-panel {
     .components-panel__body {
         &.is-opened {
             padding-bottom: 2rem;
@@ -200,7 +201,7 @@ img {
         }
         .components-panel__row {
             padding: 0 1em 0 1rem;
-			gap: 20px;
+            gap: 20px;
         }
         &-title {
             margin-bottom: 0.75rem;
@@ -323,7 +324,7 @@ img {
             font-weight: 700;
         }
         &:after {
-            content: ' | ';
+            content: " | ";
             opacity: 0.25;
         }
         &:last-child {
@@ -361,206 +362,205 @@ img {
     }
 }
 
-
 // Dashboard Specific Styles
-    .built-wrap {
-        margin-left: 50px;
-        max-width: 1400px;
-        padding-right: 50px;
-        width: auto;
+.built-wrap {
+    margin-left: 50px;
+    max-width: 1400px;
+    padding-right: 50px;
+    width: auto;
 
-        @media only screen and (max-width: 1000px) {
-            margin-left: 15px;
-            padding-right: 15px;
-        }
+    @media only screen and (max-width: 1000px) {
+        margin-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.components-divider {
+    opacity: 0.15;
+}
+
+// Brand Settings
+.brand-settings {
+    .upload-container {
+        display: flex;
+        flex-direction: column;
+        align-items: self-end;
+        width: 100%;
     }
 
-    .components-divider {
-        opacity: 0.15;
+    .favicon-flexblock {
+        justify-content: flex-end;
     }
 
-    // Brand Settings
-    .brand-settings {
-        .upload-container {
-            display: flex;
-            flex-direction: column;
-            align-items: self-end;
-            width: 100%;
-        }
-
-        .favicon-flexblock {
-            justify-content: flex-end;
-        }
-
-        .colors-flexblock {
-            align-items: center;
-        }
-
-        .image-wrap {
-            border: 2px dashed #d7d7dd;
-            border-radius: 6px;
-            margin-bottom: 16px;
-
-            &--logo {
-                padding: 36px;
-                width: calc(100% - 72px);
-            }
-
-            &--favicon {
-                aspect-ratio: 1;
-                width: 82px;
-                padding: 24px;
-                display: flex;
-                align-items: center;
-            }
-        }
-
-        .logo-title {
-            margin-top: 1rem;
-        }
-
-        .logo-placeholder {
-            min-height: 100px;
-            width: 100%;
-        }
-        .favicon-placeholder {
-            height: 100%;
-        }
-    }
-
-    // Business Hours
-    .business-hours {
-        min-height: 70px;
+    .colors-flexblock {
         align-items: center;
-
-        &__time-group {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
-        &__day {
-            min-width: 120px;
-            font-weight: 500;
-        }
-
-        &__time {
-            width: 75px;
-        }
-    
-        &__am-pm {
-            width: 55px;
-        }
-
-        &__dash {
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-        }
-
-        .components-toggle-control {
-            margin-bottom: 0.25rem;
-        }
     }
 
-    // Social Media
-    .social-media {
-        align-items: flex-end;
+    .image-wrap {
+        border: 2px dashed #d7d7dd;
+        border-radius: 6px;
+        margin-bottom: 16px;
 
-        svg {
-            fill: #a9a9ae;
-            background-color: #f0f0f1;
-            height: 1.25rem;
-            width: 1.25rem;
-            border: 1px solid #949494;
-            padding: 0.3125rem;
-            margin-bottom: 1rem;
-            margin-left: -16px;
-        }
-    }
-
-    // Dashboard Header
-    .built-dashboard-header {
-        margin-bottom: 2rem;
-
-        h1 {
-            font-size: 14px;
+        &--logo {
+            padding: 36px;
+            width: calc(100% - 72px);
         }
 
-        &__title {
+        &--favicon {
+            aspect-ratio: 1;
+            width: 82px;
+            padding: 24px;
             display: flex;
-            flex-direction: row;
             align-items: center;
-            .icon {
-                height: 30px;
-                padding-right: 0.35rem;
-                svg {
-                    height: 30px;
-                    width: 30px;
-                    fill: var(--wp-admin-theme-color);
-                }
-            }
         }
     }
 
-    // Icon Wrap
-    .icon-wrap {
-        background-color: #f0f0f1;
-        line-height: 0;
-        border-radius: 3px;
-        display: block;
-        svg {
-            line-height: 0;
-            padding: 4px;
-            fill: #8a8b95;
-        }
-        &:hover {
-            background-color: var(--wp-admin-theme-color);
-            svg {
-                fill: #fff;
-            }
-        }
+    .logo-title {
+        margin-top: 1rem;
     }
 
-    // Dashboard Welcome
-    .built-dashboard-welcome {
-        margin-bottom: 24px;
-        padding: 0;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        &__title {
-            margin: 0.25rem 0 0.5rem 0;
-            font-size: 2rem;
-        }
+    .logo-placeholder {
+        min-height: 100px;
+        width: 100%;
     }
+    .favicon-placeholder {
+        height: 100%;
+    }
+}
 
-    // Integrations & Tools
-    .integration {
+// Business Hours
+.business-hours {
+    min-height: 70px;
+    align-items: center;
+
+    &__time-group {
+        margin-top: 0;
         margin-bottom: 0;
-
-        &__logo {
-            max-height: 32px;
-            max-width: 32px;
-        }
     }
 
-    // Privacy & Accessibility
-    .privacy,
-    .accessibility {
-        &__or {
-            text-transform: uppercase;
-            margin-top: 38px;
-            padding: 0 28px 0 10px;
-        }
-
-        &__button {
-            margin-top: 30px;
-        }
+    &__day {
+        min-width: 120px;
+        font-weight: 500;
     }
 
-    // Page Select
-    .is-page-select {
-        align-items: flex-start;
-        &-button {
-            margin-top: 32px;
+    &__time {
+        width: 75px;
+    }
+
+    &__am-pm {
+        width: 55px;
+    }
+
+    &__dash {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .components-toggle-control {
+        margin-bottom: 0.25rem;
+    }
+}
+
+// Social Media
+.social-media {
+    align-items: flex-end;
+
+    svg {
+        fill: #a9a9ae;
+        background-color: #f0f0f1;
+        height: 1.25rem;
+        width: 1.25rem;
+        border: 1px solid #949494;
+        padding: 0.3125rem;
+        margin-bottom: 1rem;
+        margin-left: -16px;
+    }
+}
+
+// Dashboard Header
+.polaris-dashboard-header {
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 14px;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .icon {
+            height: 30px;
+            padding-right: 0.35rem;
+            svg {
+                height: 30px;
+                width: 30px;
+                fill: var(--wp-admin-theme-color);
+            }
         }
     }
+}
+
+// Icon Wrap
+.icon-wrap {
+    background-color: #f0f0f1;
+    line-height: 0;
+    border-radius: 3px;
+    display: block;
+    svg {
+        line-height: 0;
+        padding: 4px;
+        fill: #8a8b95;
+    }
+    &:hover {
+        background-color: var(--wp-admin-theme-color);
+        svg {
+            fill: #fff;
+        }
+    }
+}
+
+// Dashboard Welcome
+.polaris-dashboard-welcome {
+    margin-bottom: 24px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    &__title {
+        margin: 0.25rem 0 0.5rem 0;
+        font-size: 2rem;
+    }
+}
+
+// Integrations & Tools
+.integration {
+    margin-bottom: 0;
+
+    &__logo {
+        max-height: 32px;
+        max-width: 32px;
+    }
+}
+
+// Privacy & Accessibility
+.privacy,
+.accessibility {
+    &__or {
+        text-transform: uppercase;
+        margin-top: 38px;
+        padding: 0 28px 0 10px;
+    }
+
+    &__button {
+        margin-top: 30px;
+    }
+}
+
+// Page Select
+.is-page-select {
+    align-items: flex-start;
+    &-button {
+        margin-top: 32px;
+    }
+}
