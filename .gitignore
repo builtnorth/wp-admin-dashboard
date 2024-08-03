@@ -10,6 +10,8 @@ _srcMaps/
 
 # Exclude composer dependencies in the vendor directory
 /vendor
+/build
+/dist
 
 # Log files
 *.log
