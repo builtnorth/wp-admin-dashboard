@@ -9,29 +9,42 @@ Business Hours
 
 .business-hours {
     justify-content: flex-start;
+    position: relative;
+
+    &:after {
+        content: "";
+        border-top: 1px dashed var(--color--light-gray);
+        position: absolute;
+        width: calc(100% - 2.5rem);
+        top: -5px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
 
     &__time-group {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        margin: 0 !important;
     }
 
     &__day {
-        min-width: 90px;
-        font-weight: bold;
+        min-width: 80px;
+        font-weight: 600;
     }
 
     &__time {
-        width: 90px
+        width: 80px;
     }
 
     &__am-pm {
-        width: 60px
+        width: 60px;
     }
 
     &__dash {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 
     .components-base-control {
@@ -45,35 +58,16 @@ Business Hours
     }
 }
 
-.business-hours__time-group {
-            margin-top: 0;
-            margin-bottom: 0;
+.business-hours .components-toggle-control {
+    margin-bottom: 0.25rem;
+}
+
+.business-hours__time {
+    .components-datetime__time {
+        .components-datetime__time-field-day,
+        .components-datetime__time-field-year,
+        .components-datetime__time-field-month {
+            display: none;
         }
-    
-        .business-hours {
-            min-height: 70px;
-            align-items: center;
-
-            &__day {
-                min-width: 120px;
-                font-weight: 500;
-            }
-
-            &__time {
-                width: 75px
-            }
-        
-            &__am-pm {
-                width: 55px
-            }
-
-            &__dash {
-                padding-left: 0.5rem;
-                padding-right: 0.5rem;
-            }
-
-        }
-    
-        .business-hours .components-toggle-control {
-            margin-bottom: 0.25rem;
-        }
+    }
+}

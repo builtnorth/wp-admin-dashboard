@@ -7,9 +7,8 @@ Notices
 ------------------------------------------------------------------
 */
 
-.built-admin__notices {
-    .components-snackbar {
-        bottom: .5rem;
-        position: fixed;
-    }
+// Snackbar Notifications
+.components-snackbar-list {
+    bottom: 1rem;
+    position: fixed;
 }

@@ -38,13 +38,13 @@ img {
 .built-wrap {
     position: relative;
     margin-left: 50px;
-    max-width: 1400px;
-    padding-right: 50px;
+    max-width: 1320px;
+    margin-right: 75px;
     width: auto;
 
     @media only screen and (max-width: 1000px) {
         margin-left: 15px;
-        padding-right: 15px;
+        margin-right: 25px;
     }
 }
 
@@ -217,8 +217,8 @@ img {
     padding-top: 2rem;
 
     .components-tab-panel__tabs .built-tab {
-        margin-right: 2rem;
-        padding-bottom: 1rem;
+        margin-right: 1.25rem;
+        padding-bottom: 0.5rem;
         font-size: 12px;
     }
 
@@ -233,42 +233,18 @@ img {
         }
     }
 
-    .built-save-button {
-        position: absolute;
-        top: -5.35rem;
-        right: 1.5rem;
-        margin-top: 0;
-    }
-
     .components-tab-panel__tab-content {
-        border-top: 1px solid #e2e4e7;
+        //border-top: 1px solid #e2e4e7;
         padding-top: 2rem;
+        position: relative;
     }
-}
-
-// Snackbar Notifications
-.components-snackbar-list {
-    width: auto;
-    bottom: 20px;
-    position: fixed;
-    right: 0;
-}
-
-.components-snackbar-list__notice-container {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.built-admin__notices .components-snackbar {
-    bottom: 2rem;
-    position: relative;
-    right: 2rem;
 }
 
 // Save Button
 .built-save-button {
     margin: 1.5rem 0 3rem;
+    position: absolute;
+    right: 0;
     .message {
         padding: 0 15px;
         position: relative;
@@ -301,41 +277,6 @@ img {
     margin-top: 32px;
 }
 
-// Map Styles
-.map-container {
-    height: 400px;
-}
-
-.map-panel-row {
-    align-items: center;
-}
-
-.map-stats {
-    background: #f0f0f0;
-    border-radius: 3px;
-    padding: 4px 8px;
-    margin: 0;
-    li {
-        margin: 0 10px 0 0;
-        font-size: 11px;
-        font-family: monospace;
-        display: inline-block;
-        span {
-            font-weight: 700;
-        }
-        &:after {
-            content: " | ";
-            opacity: 0.25;
-        }
-        &:last-child {
-            margin-right: 0;
-            &:after {
-                display: none;
-            }
-        }
-    }
-}
-
 // Info Notice
 .built-info-notice {
     background: #f0f0f0;
@@ -362,70 +303,8 @@ img {
     }
 }
 
-// Dashboard Specific Styles
-.built-wrap {
-    margin-left: 50px;
-    max-width: 1400px;
-    padding-right: 50px;
-    width: auto;
-
-    @media only screen and (max-width: 1000px) {
-        margin-left: 15px;
-        padding-right: 15px;
-    }
-}
-
 .components-divider {
     opacity: 0.15;
-}
-
-// Brand Settings
-.brand-settings {
-    .upload-container {
-        display: flex;
-        flex-direction: column;
-        align-items: self-end;
-        width: 100%;
-    }
-
-    .favicon-flexblock {
-        justify-content: flex-end;
-    }
-
-    .colors-flexblock {
-        align-items: center;
-    }
-
-    .image-wrap {
-        border: 2px dashed #d7d7dd;
-        border-radius: 6px;
-        margin-bottom: 16px;
-
-        &--logo {
-            padding: 36px;
-            width: calc(100% - 72px);
-        }
-
-        &--favicon {
-            aspect-ratio: 1;
-            width: 82px;
-            padding: 24px;
-            display: flex;
-            align-items: center;
-        }
-    }
-
-    .logo-title {
-        margin-top: 1rem;
-    }
-
-    .logo-placeholder {
-        min-height: 100px;
-        width: 100%;
-    }
-    .favicon-placeholder {
-        height: 100%;
-    }
 }
 
 // Business Hours
@@ -461,46 +340,6 @@ img {
     }
 }
 
-// Social Media
-.social-media {
-    align-items: flex-end;
-
-    svg {
-        fill: #a9a9ae;
-        background-color: #f0f0f1;
-        height: 1.25rem;
-        width: 1.25rem;
-        border: 1px solid #949494;
-        padding: 0.3125rem;
-        margin-bottom: 1rem;
-        margin-left: -16px;
-    }
-}
-
-// Dashboard Header
-.polaris-dashboard-header {
-    margin-bottom: 2rem;
-
-    h1 {
-        font-size: 14px;
-    }
-
-    &__title {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        .icon {
-            height: 30px;
-            padding-right: 0.35rem;
-            svg {
-                height: 30px;
-                width: 30px;
-                fill: var(--wp-admin-theme-color);
-            }
-        }
-    }
-}
-
 // Icon Wrap
 .icon-wrap {
     background-color: #f0f0f1;
@@ -522,14 +361,48 @@ img {
 
 // Dashboard Welcome
 .polaris-dashboard-welcome {
-    margin-bottom: 24px;
-    padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     &__title {
-        margin: 0.25rem 0 0.5rem 0;
-        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        h2 {
+            font-size: 1.25rem;
+            line-height: 1.125;
+            color: #666e73;
+            span {
+                font-size: 2rem;
+                text-transform: capitalize;
+                //color: var(--wp-admin-theme-color);
+                color: #1d2327;
+                display: block;
+            }
+        }
+        img {
+            margin-right: 1rem;
+            width: 76px;
+            height: 76px;
+            border-radius: 999px;
+            background: #fff;
+            padding: 3px;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.075);
+        }
+    }
+    &__actions {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-flow: column;
+    }
+}
+
+.button {
+    &__setup-wizard {
+        margin-top: 3rem;
+        color: var(--color--medium-gray);
     }
 }
 

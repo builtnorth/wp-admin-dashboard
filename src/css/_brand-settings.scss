@@ -8,51 +8,47 @@ Brand Settings
 */
 
 .brand-settings {
+    .upload-container {
+        display: flex;
+        flex-direction: column;
+        align-items: self-end;
+        width: 100%;
+    }
 
-            .upload-container {
-                display: flex;
-                flex-direction: column;
-                align-items: self-end;
-                width: 100%;
-            }
+    .favicon-flexblock {
+        justify-content: flex-end;
+    }
 
-            .favicon-flexblock {
-                justify-content: flex-end;
-            }
+    .colors-flexblock {
+        align-items: center;
+    }
 
-            .colors-flexblock {
-                align-items: center;
-            }
+    .image-wrap {
+        border: 1px dashed var(--color--light-gray);
+        //border-radius: 6px;
+        margin-bottom: 1.25rem;
+        padding: 1.25rem;
 
-            .image-wrap {
-                border: 2px dashed #d7d7dd;
-                border-radius: 6px;
-                margin-bottom: 16px;
-
-                &--logo {
-                    padding: 36px;
-                    width: calc(100% - 72px);
-                }
-
-                &--favicon {
-                    aspect-ratio: 1;
-                    width: 82px;
-                    padding: 24px;
-                    display: flex;
-                    align-items: center;
-                }
-
-            }
-
-            .logo-title {
-                margin-top: 1rem;
-            }
-
-            .logo-placeholder {
-                min-height: 100px;
-                width: 100%;
-            }
-            .favicon-placeholder {
-                height: 100%;
-            }
+        &--logo {
+            width: calc(100% - 72px);
         }
+
+        &--favicon {
+            aspect-ratio: 1;
+            width: 82px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .logo-title {
+        margin-top: 1rem;
+    }
+
+    .logo-placeholder {
+        aspect-ratio: 21/10;
+    }
+    .favicon-placeholder {
+        aspect-ratio: 1;
+    }
+}

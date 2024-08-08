@@ -19,6 +19,10 @@ body[class*="dashboard_page_built-"] {
     }
 }
 
+#wpfooter p {
+    margin-left: 50px;
+}
+
 .polaris-dashboard {
     @import "./css/_header";
     @import "./css/_main";
@@ -27,4 +31,5 @@ body[class*="dashboard_page_built-"] {
     @import "./css/social-media";
     @import "./css/brand-settings";
     @import "./css/integrations";
+    @import "./css/location_map";
 }

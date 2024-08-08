@@ -1,4 +1,3 @@
-
 /*
 ------------------------------------------------------------------
 CSS Variables
@@ -8,14 +7,13 @@ CSS Variables
 ------------------------------------------------------------------
 */
 
-
 body {
-
-	/* Typography */
-	--base-font: 18px;
+    /* Typography */
+    --base-font: 18px;
 
     /* Color */
     --color--white: #fff;
+    --color--base: #f0f0f0;
     --color--light-gray: #a9a9ae;
-
+    --color--medium-gray: #71748e;
 }

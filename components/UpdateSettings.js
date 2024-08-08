@@ -1,18 +1,10 @@
-/**
- * ------------------------------------------------------------------
- * Update Settings
- * ------------------------------------------------------------------
- *
- * Responsible for updating the settings in the database.
- */
-
 import classnames from "classnames";
 
 // WordPress Dependencies
 import { Animate, Button } from "@wordpress/components";
 import { store as coreStore } from "@wordpress/core-data";
 import { dispatch, useDispatch } from "@wordpress/data";
-import { Fragment, useState } from "@wordpress/element";
+import { Fragment, useEffect, useState } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
 
 /**
@@ -23,15 +15,8 @@ import { __ } from "@wordpress/i18n";
  */
 function UpdateSettings(props) {
     const [status, setStatus] = useState("saved");
-    const {
-        restEndPoint,
-        settings,
-        setSettings,
-        hasUpdates,
-        setHasUpdates,
-        tabSlug,
-        tabSettings,
-    } = props;
+    const { restEndPoint, settings, setSettings, hasUpdates, setHasUpdates } =
+        props;
     const { saveEntityRecord } = useDispatch(coreStore);
 
     const updateButton =
@@ -40,67 +25,82 @@ function UpdateSettings(props) {
             : __("Save Settings", "polaris");
 
     // Handle all setting changes, and save to the database.
-    async function onSettingsChange(type = "save") {
-        let record = "";
+    async function onSettingsChange() {
+        if (!hasUpdates) {
+            setStatus("no-changes");
+            return;
+        }
 
         setStatus("saving");
-        record = _.assign({ ...settings }, { [tabSlug]: tabSettings });
-        console.log(_.assign({ ...settings }, { [tabSlug]: tabSettings }));
 
-        let response = "";
-
-        response = await saveEntityRecord("polaris/v1", restEndPoint, record);
-
-        if (response) {
-            setSettings(response);
-            setStatus("saved");
-            setHasUpdates(false);
-
-            // Snackbar notification
-            dispatch("core/notices").createNotice(
-                "success",
-                __("Settings Updated", "polaris"),
-                {
-                    type: "snackbar",
-                    isDismissible: true,
-                },
+        try {
+            const response = await saveEntityRecord(
+                "polaris/v1",
+                restEndPoint,
+                settings,
             );
-        } else {
+
+            if (response) {
+                setSettings(response);
+                setStatus("saved");
+                setHasUpdates(false);
+
+                // Snackbar notification
+                dispatch("core/notices").createNotice(
+                    "success",
+                    __("Settings Updated", "polaris"),
+                    {
+                        type: "snackbar",
+                        isDismissible: true,
+                    },
+                );
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error("Error saving settings:", error);
             setStatus("error");
         }
     }
 
+    useEffect(() => {
+        console.log("HasUpdates changed:", hasUpdates);
+    }, [hasUpdates]);
+
     return (
         <Fragment>
             <div className="built-save-button">
-                {[
-                    status === "saving" && (
-                        <Animate type="loading">
-                            {({ className: animateClassName }) => (
-                                <span
-                                    className={classnames(
-                                        "message",
-                                        animateClassName,
-                                    )}
-                                >
-                                    {__("Saving...", "polaris")}
-                                </span>
-                            )}
-                        </Animate>
-                    ),
-                    status === "error" && (
-                        <span className="message update-failed">
-                            {__("Update failed. Please try again.", "polaris")}
-                        </span>
-                    ),
-                ]}
+                {status === "saving" && (
+                    <Animate type="loading">
+                        {({ className: animateClassName }) => (
+                            <span
+                                className={classnames(
+                                    "message",
+                                    animateClassName,
+                                )}
+                            >
+                                {__("Saving...", "polaris")}
+                            </span>
+                        )}
+                    </Animate>
+                )}
+                {status === "error" && (
+                    <span className="message update-failed">
+                        {__("Update failed. Please try again.", "polaris")}
+                    </span>
+                )}
+                {status === "no-changes" && (
+                    <span className="message no-changes">
+                        {__("No changes to save.", "polaris")}
+                    </span>
+                )}
 
                 <Button
                     className={classnames("button", {
                         "is-busy": status === "saving",
                     })}
-                    onClick={() => onSettingsChange()}
-                    //disabled={ ! hasUpdates && status !== 'error' }
+                    onClick={onSettingsChange}
+                    disabled={!hasUpdates && status !== "error"}
                     variant="primary"
                 >
                     {updateButton}
