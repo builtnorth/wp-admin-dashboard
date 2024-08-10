@@ -24,7 +24,8 @@ Brand Settings
     }
 
     .image-wrap {
-        border: 1px dashed var(--color--light-gray);
+        border: 1px dashed var(--color--border-gray);
+        background-color: var(--color--base);
         //border-radius: 6px;
         margin-bottom: 1.25rem;
         padding: 1.25rem;

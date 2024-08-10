@@ -20,7 +20,7 @@ import {
 import { __ } from "@wordpress/i18n";
 import { PluginArea } from "@wordpress/plugins";
 
-import { lifesaver } from "@wordpress/icons";
+import { IconRenderer } from "./IconRenderer";
 
 /**
  * Admin Header
@@ -42,20 +42,32 @@ function AdminHeader({ pageName, pageIcon, SupportEmail }) {
                         </h1>
                     </FlexItem>
                     <FlexItem className="built-dashboard-header__right">
-                        <Button
-                            className="button-icon"
-                            variant="tertiary"
-                            size="compact"
-                            icon={lifesaver}
-                            label="Support"
-                        />
-                        {/* <Button
-                            className="button-icon"
-                            variant="tertiary"
-                            size="compact"
-                            icon={lifesaver}
-                            label="Support"
-                        /> */}
+                        {polaris_localize.header_icons &&
+                            Object.entries(polaris_localize.header_icons).map(
+                                ([key, icon]) => (
+                                    <Button
+                                        key={key}
+                                        className="button-icon"
+                                        variant="tertiary"
+                                        size="compact"
+                                        icon={
+                                            <IconRenderer
+                                                iconName={icon.icon}
+                                            />
+                                        }
+                                        label={icon.label}
+                                        href={icon.url}
+                                        target={
+                                            icon.external ? "_blank" : "_self"
+                                        }
+                                        rel={
+                                            icon.external
+                                                ? "noopener noreferrer"
+                                                : ""
+                                        }
+                                    />
+                                ),
+                            )}
                     </FlexItem>
 
                     <Slot name="DashboardHeaderSlotAfterTitle" />

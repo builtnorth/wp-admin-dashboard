@@ -119,7 +119,7 @@ img {
 
 .components-panel__body {
     background: #fff;
-    border: 1px solid #e2e4e7;
+    border: 1px solid #e2e4e7 !important;
     margin: 0;
 }
 
@@ -169,11 +169,21 @@ img {
     }
 
     &__icon {
-        fill: var(--color--light-gray);
+        fill: var(--color--medium-gray);
     }
 
     &__description {
         margin-bottom: auto;
+    }
+
+    // &__actions {
+    //     display: grid;
+    //     grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+    //     gap: 0.5rem;
+    // }
+
+    &__button {
+        margin-right: 0.5rem;
     }
 
     &__link-list {
@@ -199,16 +209,16 @@ img {
                 right: 1rem;
             }
         }
-        .components-panel__row {
-            padding: 0 1em 0 1rem;
-            gap: 20px;
-        }
         &-title {
             margin-bottom: 0.75rem;
         }
         h3 {
             font-size: 14px;
         }
+    }
+    .components-panel__row {
+        padding: 0 1em 0 1rem;
+        gap: 20px;
     }
 }
 
@@ -307,39 +317,6 @@ img {
     opacity: 0.15;
 }
 
-// Business Hours
-.business-hours {
-    min-height: 70px;
-    align-items: center;
-
-    &__time-group {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    &__day {
-        min-width: 120px;
-        font-weight: 500;
-    }
-
-    &__time {
-        width: 75px;
-    }
-
-    &__am-pm {
-        width: 55px;
-    }
-
-    &__dash {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-
-    .components-toggle-control {
-        margin-bottom: 0.25rem;
-    }
-}
-
 // Icon Wrap
 .icon-wrap {
     background-color: #f0f0f1;
@@ -363,17 +340,20 @@ img {
 .polaris-dashboard-welcome {
     margin-bottom: 3rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     &__title {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        flex-direction: row;
         h2 {
             font-size: 1.25rem;
-            line-height: 1.125;
+            line-height: 1.25;
             color: #666e73;
+            font-weight: 400;
             span {
                 font-size: 2rem;
+                font-weight: 600;
                 text-transform: capitalize;
                 //color: var(--wp-admin-theme-color);
                 color: #1d2327;
@@ -381,6 +361,7 @@ img {
             }
         }
         img {
+            margin-top: 0.625rem;
             margin-right: 1rem;
             width: 76px;
             height: 76px;
@@ -390,7 +371,11 @@ img {
             box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.075);
         }
     }
+    &__message {
+        max-width: 480px;
+    }
     &__actions {
+        margin-top: 1.5rem;
         position: relative;
         display: flex;
         align-items: flex-end;

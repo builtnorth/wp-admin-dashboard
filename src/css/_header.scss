@@ -12,7 +12,7 @@ Admin Header
     box-shadow:
         0 1px 0 rgba(213, 213, 213, 0.5),
         0 1px 2px #eeeeee;
-    padding: 1rem 0.75rem;
+    padding: 1rem 0 1rem 0.75rem;
     margin-bottom: 2rem;
     margin-left: -2em;
 
@@ -31,7 +31,7 @@ Admin Header
             svg {
                 height: 30px;
                 width: 30px;
-                fill: var(--color--light-gray);
+                fill: var(--color--medium-gray);
             }
         }
     }
@@ -48,12 +48,12 @@ Admin Header
     background-color: var(--color--base);
     margin-left: 0.5em;
     svg {
-        fill: var(--color--light-gray);
+        fill: var(--color--primary);
     }
 
     &:hover,
     &:focus {
-        background-color: var(--wp-admin-theme-color) !important;
+        background-color: var(--color--primary) !important;
         svg {
             fill: var(--color--white);
         }

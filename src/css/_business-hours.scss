@@ -7,67 +7,75 @@ Business Hours
 ------------------------------------------------------------------
 */
 
-.business-hours {
-    justify-content: flex-start;
-    position: relative;
-
-    &:after {
-        content: "";
-        border-top: 1px dashed var(--color--light-gray);
-        position: absolute;
-        width: calc(100% - 2.5rem);
-        top: -5px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+.polaris-dashboard-panel--hours-settings {
+    .components-panel__row {
+        padding-bottom: 0.75rem;
     }
 
-    &__time-group {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin: 0 !important;
+    .business-hours {
+        justify-content: flex-start;
+        position: relative;
+        padding-bottom: 0.75rem;
+        padding-top: 0.75rem;
+
+        &:after {
+            content: "";
+            border-top: 1px dashed var(--color--border-gray);
+            position: absolute;
+            width: calc(100% - 2.5rem);
+            top: -5px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        &__time-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 0 !important;
+        }
+
+        &__day {
+            min-width: 80px;
+            font-weight: 600;
+        }
+
+        &__time {
+            width: 80px;
+        }
+
+        &__am-pm {
+            width: 60px;
+        }
+
+        &__dash {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .components-base-control {
+            flex-grow: 0;
+            margin-right: 0.25rem;
+        }
+
+        .components-toggle-control {
+            margin-bottom: 0;
+            padding-left: 1rem;
+        }
     }
 
-    &__day {
-        min-width: 80px;
-        font-weight: 600;
+    .business-hours .components-toggle-control {
+        margin-bottom: 0.25rem;
     }
 
-    &__time {
-        width: 80px;
-    }
-
-    &__am-pm {
-        width: 60px;
-    }
-
-    &__dash {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-
-    .components-base-control {
-        flex-grow: 0;
-        margin-right: 0.25rem;
-    }
-
-    .components-toggle-control {
-        margin-bottom: 0;
-        padding-left: 1rem;
-    }
-}
-
-.business-hours .components-toggle-control {
-    margin-bottom: 0.25rem;
-}
-
-.business-hours__time {
-    .components-datetime__time {
-        .components-datetime__time-field-day,
-        .components-datetime__time-field-year,
-        .components-datetime__time-field-month {
-            display: none;
+    .business-hours__time {
+        .components-datetime__time {
+            .components-datetime__time-field-day,
+            .components-datetime__time-field-year,
+            .components-datetime__time-field-month {
+                display: none;
+            }
         }
     }
 }

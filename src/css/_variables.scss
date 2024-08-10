@@ -13,7 +13,10 @@ body {
 
     /* Color */
     --color--white: #fff;
-    --color--base: #f0f0f0;
-    --color--light-gray: #a9a9ae;
-    --color--medium-gray: #71748e;
+    --color--base: #fafafb;
+    --color--primary: var(--wp-admin-theme-color);
+    --color--light-gray: #eeefef;
+    --color--medium-gray: #8f9eac;
+    --color--dark-gray: #101632;
+    --color--border-gray: #bec6ce;
 }
