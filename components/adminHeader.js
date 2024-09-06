@@ -33,15 +33,25 @@ function AdminHeader({ pageName, pageIcon, SupportEmail }) {
             <div className="polaris-dashboard-header">
                 <Slot name="DashboardHeaderSlotBeforeTitle" />
 
-                <Flex className="built-wrap">
+                <Flex className="polaris-wrap">
                     <FlexItem className="polaris-dashboard-header__title">
-                        {/* <span className="sub-title"> { setHubName ? HubName : 'Site Hub' } </span> */}
-                        <div className="icon">{pageIcon}</div>
+                        {polaris_localize.whitelabel_logo ? (
+                            <img
+                                className="polaris-dashboard-header__logo"
+                                src={polaris_localize.whitelabel_logo}
+                                alt={
+                                    polaris_localize.whitelabel_name ||
+                                    "Company Logo"
+                                }
+                            />
+                        ) : (
+                            <div className="icon">{pageIcon}</div>
+                        )}
                         <h1 className="title">
-                            {__(`${pageName}`, "built-admin")}
+                            {__(`${pageName}`, "polaris-admin")}
                         </h1>
                     </FlexItem>
-                    <FlexItem className="built-dashboard-header__right">
+                    <FlexItem className="polaris-dashboard-header__right">
                         {polaris_localize.header_icons &&
                             Object.entries(polaris_localize.header_icons).map(
                                 ([key, icon]) => (

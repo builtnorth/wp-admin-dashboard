@@ -12,7 +12,7 @@ Imports all needed scss files into the .polaris-dashboard selector.
 @import "./css/_variables";
 
 body.toplevel_page_polaris-dashboard,
-body[class*="dashboard_page_built-"] {
+body[class*="dashboard_page_polaris-"] {
     ul#adminmenu a.wp-has-current-submenu::after,
     ul#adminmenu > li.current > a.current::after {
         border-right-color: #ffffff;
