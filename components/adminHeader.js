@@ -52,32 +52,26 @@ function AdminHeader({ pageName, pageIcon, SupportEmail }) {
                         </h1>
                     </FlexItem>
                     <FlexItem className="polaris-dashboard-header__right">
-                        {polaris_localize.header_icons &&
-                            Object.entries(polaris_localize.header_icons).map(
-                                ([key, icon]) => (
-                                    <Button
-                                        key={key}
-                                        className="button-icon"
-                                        variant="tertiary"
-                                        size="compact"
-                                        icon={
-                                            <IconRenderer
-                                                iconName={icon.icon}
-                                            />
-                                        }
-                                        label={icon.label}
-                                        href={icon.url}
-                                        target={
-                                            icon.external ? "_blank" : "_self"
-                                        }
-                                        rel={
-                                            icon.external
-                                                ? "noopener noreferrer"
-                                                : ""
-                                        }
-                                    />
-                                ),
-                            )}
+                        {polaris_dashboard_localize.header_icons &&
+                            Object.entries(
+                                polaris_dashboard_localize.header_icons,
+                            ).map(([key, icon]) => (
+                                <Button
+                                    key={key}
+                                    className="button-icon"
+                                    variant="tertiary"
+                                    size="compact"
+                                    icon={<IconRenderer iconName={icon.icon} />}
+                                    label={icon.label}
+                                    href={icon.url}
+                                    target={icon.external ? "_blank" : "_self"}
+                                    rel={
+                                        icon.external
+                                            ? "noopener noreferrer"
+                                            : ""
+                                    }
+                                />
+                            ))}
                     </FlexItem>
 
                     <Slot name="DashboardHeaderSlotAfterTitle" />
