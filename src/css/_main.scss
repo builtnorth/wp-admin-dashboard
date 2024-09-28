@@ -7,18 +7,22 @@ Main Styles for BuiltNorthWPAdminDashboard
 */
 
 .polaris-dashboard-blocks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+
     .polaris-dashboard-flex {
-        flex: 0 0 calc(50% - 0.75rem);
+        //min-width: 250px; // Minimum width to prevent too narrow columns
 
-        &--posts {
-            flex: 0 0 calc(33.3333% - 0.75rem);
-        }
+        // Default to span 2 columns (50% width)
+        grid-column: span 1;
 
-        &--action-panel {
-            flex: 0 0 calc(66.6666% - 0.76rem);
+        &--primary-panel {
+            // Action panel spans 3 columns (75% width)
+            grid-column: span 3;
         }
     }
+
     .polaris-dashboard-block {
         &--forms {
             .submissions__chart {
@@ -254,10 +258,13 @@ img {
 
     &__link-list {
         padding-top: 0;
-        .link-list__item svg {
-            margin-left: 4px;
-            height: 21px;
-            width: 21px;
+        .link-list__item {
+            display: flex;
+            svg {
+                margin-left: 4px;
+                height: 21px;
+                width: 21px;
+            }
         }
     }
 }
