@@ -1,4 +1,10 @@
-import { Button, Card, CardBody, CardHeader } from "@wordpress/components";
+import {
+    Button,
+    Card,
+    CardBody,
+    CardHeader,
+    FlexBlock,
+} from "@wordpress/components";
 import React, { useMemo } from "react";
 import { IconRenderer } from "./IconRenderer";
 
@@ -38,31 +44,41 @@ const DashboardPanels = ({ dashboardPanels }) => {
     return (
         <>
             {sortedPanels.map(([key, panel]) => (
-                <Card
+                <FlexBlock
                     key={key}
-                    className={`polaris-dashboard-block polaris-dashboard-block--${key}`}
+                    className={`polaris-dashboard-flex polaris-dashboard-flex--${key}`}
                 >
-                    <CardHeader>
-                        <h2 className="polaris-dashboard-block__title">
-                            {panel.heading}
-                        </h2>
-                        {panel.icon && (
-                            <IconRenderer
-                                iconName={panel.icon}
-                                className="polaris-dashboard-block__icon"
-                            />
-                        )}
-                    </CardHeader>
-                    <CardBody className="polaris-dashboard-block__description">
-                        {panel.content}
-                    </CardBody>
-                    {(panel.button_primary || panel.button_secondary) && (
-                        <CardBody className="polaris-dashboard-block__actions">
-                            {renderButton(panel.button_primary, "secondary")}
-                            {renderButton(panel.button_secondary, "tertiary")}
+                    <Card
+                        className={`polaris-dashboard-block polaris-dashboard-block--${key}`}
+                    >
+                        <CardHeader>
+                            <h2 className="polaris-dashboard-block__title">
+                                {panel.heading}
+                            </h2>
+                            {panel.icon && (
+                                <IconRenderer
+                                    iconName={panel.icon}
+                                    className="polaris-dashboard-block__icon"
+                                />
+                            )}
+                        </CardHeader>
+                        <CardBody className="polaris-dashboard-block__description">
+                            {panel.content}
                         </CardBody>
-                    )}
-                </Card>
+                        {(panel.button_primary || panel.button_secondary) && (
+                            <CardBody className="polaris-dashboard-block__actions">
+                                {renderButton(
+                                    panel.button_primary,
+                                    "secondary",
+                                )}
+                                {renderButton(
+                                    panel.button_secondary,
+                                    "tertiary",
+                                )}
+                            </CardBody>
+                        )}
+                    </Card>
+                </FlexBlock>
             ))}
         </>
     );
