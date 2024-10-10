@@ -13,24 +13,20 @@ Imports all needed scss files into the .polaris-dashboard selector.
 
 body.toplevel_page_polaris-dashboard,
 body[class*="dashboard_page_polaris-"] {
-    ul#adminmenu a.wp-has-current-submenu::after,
-    ul#adminmenu > li.current > a.current::after {
-        border-right-color: #ffffff;
-    }
-}
-
-#wpfooter p {
-    margin-left: 50px;
+	ul#adminmenu a.wp-has-current-submenu::after,
+	ul#adminmenu > li.current > a.current::after {
+		border-right-color: #ffffff;
+	}
 }
 
 .polaris-dashboard {
-    @import "./css/_header";
-    @import "./css/_main";
-    @import "./css/_notices";
-    @import "./css/business-hours";
-    @import "./css/social-media";
-    @import "./css/brand-settings";
-    @import "./css/integrations";
-    @import "./css/location_map";
-    @import "./css/_stat-item";
+	@import "./css/_header";
+	@import "./css/_main";
+	@import "./css/_notices";
+	@import "./css/business-hours";
+	@import "./css/social-media";
+	@import "./css/brand-settings";
+	@import "./css/integrations";
+	@import "./css/location_map";
+	@import "./css/_stat-item";
 }

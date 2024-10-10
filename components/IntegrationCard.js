@@ -2,81 +2,133 @@ import {
 	Card,
 	CardBody,
 	CardHeader,
+	CheckboxControl,
+	RadioControl,
+	SelectControl,
 	TextControl,
 	ToggleControl,
 } from "@wordpress/components";
+import { memo, useCallback } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
 
-function IntegrationCard({
-	name,
-	slug,
-	image,
-	description,
-	link,
-	inputLabel,
-	integrationsSettings,
-	setIntegrations,
-}) {
-	const enabled = integrationsSettings[slug]?.enabled ?? false;
-	const key = integrationsSettings[slug]?.key ?? "";
+const IntegrationCard = memo(
+	({ integration, integrationKey, updateIntegration }) => {
+		const enabled = integration.enabled ?? false;
 
-	return (
-		<Card className={`integration integration--${slug}`}>
-			<CardHeader>
-				<div className="integration__header-content">
-					{image && (
-						<img
-							className="integration__logo"
-							src={image}
-							alt={name}
-						/>
-					)}
-					<h2 className="integration__name">{name}</h2>
-				</div>
-				<ToggleControl
-					className="toggle-control toggle-control--hidden-label"
-					checked={enabled}
-					label={__("Enable Integration", "built-admin")}
-					onChange={(newValue) => {
-						setIntegrations({
-							...integrationsSettings,
-							[slug]: {
-								...integrationsSettings[slug],
-								enabled: newValue,
-							},
-						});
-					}}
-				/>
-			</CardHeader>
-			<CardBody className="integration__description">
-				{link ? (
-					<a target="_blank" rel="noopener noreferrer" href={link}>
-						{name}
-					</a>
-				) : (
-					name
-				)}
-				{description}
-			</CardBody>
-			{enabled && (
-				<CardBody>
-					<TextControl
-						label={inputLabel}
-						value={key}
+		const updateIntegrationSetting = useCallback(
+			(fieldKey, value) => {
+				updateIntegration(integrationKey, {
+					fields: {
+						...integration.fields,
+						[fieldKey]: {
+							...integration.fields[fieldKey],
+							value: value,
+						},
+					},
+				});
+			},
+			[integrationKey, integration.fields, updateIntegration],
+		);
+
+		const renderField = useCallback(
+			(field, key) => {
+				const value = field.value ?? "";
+				switch (field.type) {
+					case "radio":
+						return (
+							<RadioControl
+								label={field.label}
+								selected={value}
+								options={Object.entries(
+									field.options || {},
+								).map(([value, label]) => ({ value, label }))}
+								onChange={(newValue) =>
+									updateIntegrationSetting(key, newValue)
+								}
+							/>
+						);
+					case "checkbox":
+						return (
+							<CheckboxControl
+								label={field.label}
+								checked={value}
+								onChange={(newValue) =>
+									updateIntegrationSetting(key, newValue)
+								}
+							/>
+						);
+					case "select":
+						return (
+							<SelectControl
+								label={field.label}
+								value={value}
+								options={Object.entries(
+									field.options || {},
+								).map(([value, label]) => ({ value, label }))}
+								onChange={(newValue) =>
+									updateIntegrationSetting(key, newValue)
+								}
+							/>
+						);
+					default: // 'text' or any other type
+						return (
+							<TextControl
+								label={field.label}
+								value={value}
+								onChange={(newValue) =>
+									updateIntegrationSetting(key, newValue)
+								}
+							/>
+						);
+				}
+			},
+			[updateIntegrationSetting],
+		);
+
+		return (
+			<Card className={`integration integration--${integrationKey}`}>
+				<CardHeader>
+					<div className="integration__header-content">
+						{integration.image && (
+							<img
+								src={integration.image}
+								alt={integration.label}
+								className="integration__logo"
+							/>
+						)}
+						<h2 className="integration__name">
+							{integration.label}
+						</h2>
+					</div>
+					<ToggleControl
+						className="toggle-control toggle-control--hidden-label"
+						checked={enabled}
+						label={__("Enable Integration", "polaris-integrations")}
 						onChange={(newValue) => {
-							setIntegrations({
-								...integrationsSettings,
-								[slug]: {
-									...integrationsSettings[slug],
-									key: newValue,
-								},
+							updateIntegration(integrationKey, {
+								enabled: newValue,
 							});
 						}}
 					/>
+				</CardHeader>
+				<CardBody className="integration__description">
+					<p>{integration.description}</p>
 				</CardBody>
-			)}
-		</Card>
-	);
-}
+				{enabled && (
+					<CardBody className="integration__fields">
+						{integration.fields &&
+							Object.entries(integration.fields).map(
+								([key, field]) => (
+									<div key={key}>
+										{renderField(field, key)}
+									</div>
+								),
+							)}
+					</CardBody>
+				)}
+			</Card>
+		);
+	},
+);
 
 export { IntegrationCard };
