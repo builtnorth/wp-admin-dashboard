@@ -3,6 +3,7 @@ import {
 	CardBody,
 	CardHeader,
 	CheckboxControl,
+	__experimentalInputControl as InputControl,
 	RadioControl,
 	SelectControl,
 	TextControl,
@@ -65,6 +66,17 @@ const IntegrationCard = memo(
 								options={Object.entries(
 									field.options || {},
 								).map(([value, label]) => ({ value, label }))}
+								onChange={(newValue) =>
+									updateIntegrationSetting(key, newValue)
+								}
+							/>
+						);
+					case "password":
+						return (
+							<InputControl
+								label={field.label}
+								type="password"
+								value={value}
 								onChange={(newValue) =>
 									updateIntegrationSetting(key, newValue)
 								}
