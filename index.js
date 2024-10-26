@@ -1,7 +1,7 @@
 export { AdminHeader } from "./components/AdminHeader";
 export { AttachmentImage } from "./components/AttachmentImage";
 export { CustomMediaUpload } from "./components/CustomMediaUpload";
-export { DashboardPanels } from "./components/DashboardPanels";
+export { DashboardPanel } from "./components/DashboardPanel";
 export { IconRenderer } from "./components/IconRenderer";
 export { IntegrationCard } from "./components/IntegrationCard";
 export { SaveNotices } from "./components/SaveNotices";
