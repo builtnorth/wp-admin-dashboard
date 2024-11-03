@@ -6,32 +6,6 @@ Main Styles for BuiltNorthWPAdminDashboard
 ------------------------------------------------------------------
 */
 
-.polaris-dashboard-blocks {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 1.5rem;
-
-	.polaris-dashboard-flex {
-		//min-width: 250px; // Minimum width to prevent too narrow columns
-
-		// Default to span 2 columns (50% width)
-		grid-column: span 1;
-
-		&--primary-panel {
-			// Action panel spans 3 columns (75% width)
-			grid-column: span 3;
-		}
-	}
-
-	.polaris-dashboard-block {
-		&--forms {
-			.submissions__chart {
-				padding: 1.25rem 0 0.5rem 0;
-			}
-		}
-	}
-}
-
 // Global Styles
 img {
 	width: 100%;
@@ -224,21 +198,27 @@ img {
 }
 
 // Dashboard Block
-.polaris-dashboard-block {
+
+.polaris-dashboard-panels {
+	gap: 0;
+	justify-content: flex-start;
+}
+
+.polaris-dashboard-panel {
 	margin-bottom: 0;
-	padding-bottom: 1rem;
+	flex: 0 1 auto;
 
-	> div {
-		display: flex;
-		flex-direction: column;
+	&__card {
+		margin-left: 0.75rem;
+		margin-right: 0.75rem;
+		> div {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
-	&__title {
-		font-size: 1rem;
-		margin: 0;
-	}
-
-	&__icon {
+	&__icon,
+	&__icon svg {
 		fill: var(--color--medium-gray);
 	}
 
@@ -246,11 +226,14 @@ img {
 		margin-bottom: auto;
 	}
 
-	// &__actions {
-	//     display: grid;
-	//     grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
-	//     gap: 0.5rem;
-	// }
+	&__footer {
+		margin-top: auto;
+	}
+
+	&__buttons {
+		display: flex;
+		gap: 0.5rem;
+	}
 
 	&__button {
 		margin-right: 0.5rem;
@@ -266,32 +249,6 @@ img {
 				width: 21px;
 			}
 		}
-	}
-}
-
-// Dashboard Panel
-.polaris-dashboard-panel {
-	.components-panel__body {
-		&.is-opened {
-			padding-bottom: 2rem;
-		}
-		.components-panel__body-toggle {
-			padding: 1.25rem 1rem 1.25rem 2rem;
-			font-size: 16px;
-			.components-panel__arrow {
-				right: 1rem;
-			}
-		}
-		&-title {
-			margin-bottom: 0.75rem;
-		}
-		h3 {
-			font-size: 14px;
-		}
-	}
-	.components-panel__row {
-		padding: 0 1em 0 1rem;
-		gap: 20px;
 	}
 }
 
@@ -493,5 +450,23 @@ img {
 	align-items: flex-start;
 	&-button {
 		margin-top: 32px;
+	}
+}
+
+.upload-container {
+	.image-wrap {
+		&--box {
+			border: 2px dashed #d7d7dd;
+			border-radius: 6px;
+			margin-bottom: 16px;
+		}
+		&--tight {
+			padding: 16px;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 }
