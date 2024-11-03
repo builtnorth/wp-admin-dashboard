@@ -67,25 +67,31 @@ const DashboardPanel = ({ adminUrl, panel }) => {
 				{panel.buttons && (
 					<CardFooter className="polaris-dashboard-panel__footer">
 						<div className="polaris-dashboard-panel__buttons">
-							{panel.buttons.map((button, index) => (
-								<Button
-									key={index}
-									href={getButtonUrl(button)}
-									variant={button.variant || "secondary"}
-									target={
-										button.is_external_link
-											? "_blank"
-											: "_self"
-									}
-									rel={
-										button.is_external_link
-											? "noopener noreferrer"
-											: ""
-									}
-								>
-									{button.label}
-								</Button>
-							))}
+							{panel.buttons.map(
+								(
+									button,
+
+									index,
+								) => (
+									<Button
+										key={index}
+										href={getButtonUrl(button)}
+										variant={button.variant || "secondary"}
+										target={
+											button.is_external_link
+												? "_blank"
+												: "_self"
+										}
+										rel={
+											button.is_external_link
+												? "noopener noreferrer"
+												: ""
+										}
+									>
+										{button.label}
+									</Button>
+								),
+							)}
 						</div>
 					</CardFooter>
 				)}
