@@ -1,11 +1,16 @@
 const defaultConfig = require("@wordpress/scripts/config/webpack.config");
 
+// Handle both array and object cases for @wordpress/scripts compatibility
+const baseConfig = Array.isArray(defaultConfig)
+    ? defaultConfig[0]
+    : defaultConfig;
+
 module.exports = {
-    ...defaultConfig,
+    ...baseConfig,
     module: {
-        ...defaultConfig.module,
+        ...baseConfig.module,
         rules: [
-            ...defaultConfig.module.rules,
+            ...baseConfig.module.rules,
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
