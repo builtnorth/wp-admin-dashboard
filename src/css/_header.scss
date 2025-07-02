@@ -7,62 +7,64 @@ Admin Header
 ------------------------------------------------------------------
 */
 
-.polaris-dashboard-header {
-    background-color: var(--color--white);
-    box-shadow:
-        0 1px 0 rgba(213, 213, 213, 0.5),
-        0 1px 2px #eeeeee;
-    padding: 1rem 0 1rem 0.75rem;
-    margin-bottom: 2rem;
-    margin-left: -2em;
+.polaris-dashboard {
+    .polaris-dashboard-header {
+        background-color: var(--color--white);
+        box-shadow:
+            0 1px 0 rgba(213, 213, 213, 0.5),
+            0 1px 2px #eeeeee;
+        padding: 1rem 0 1rem 0.75rem;
+        margin-bottom: 2rem;
+        margin-left: -2em;
 
-    h1 {
-        font-size: calc(14px);
-    }
+        h1 {
+            font-size: calc(14px);
+        }
 
-    &__title {
-        margin-left: 10px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        .icon {
-            height: 30px;
-            padding-right: 0.35rem;
-            svg {
+        &__title {
+            margin-left: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .icon {
                 height: 30px;
-                width: 30px;
-                fill: var(--color--medium-gray);
+                padding-right: 0.35rem;
+                svg {
+                    height: 30px;
+                    width: 30px;
+                    fill: var(--color--medium-gray);
+                }
             }
+        }
+
+        &__logo {
+            margin-right: 1rem;
+            height: 40px;
+            width: auto;
+            border-radius: 6px;
+        }
+
+        .polaris-wrap {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 
-    &__logo {
-        margin-right: 1rem;
-        height: 40px;
-        width: auto;
-        border-radius: 6px;
-    }
-
-    .polaris-wrap {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-.button-icon {
-    background-color: var(--color--base);
-    margin-left: 0.5em;
-    svg {
-        fill: var(--color--primary);
-    }
-
-    &:hover,
-    &:focus {
-        background-color: var(--color--primary) !important;
+    .button-icon {
+        background-color: var(--color--base);
+        margin-left: 0.5em;
         svg {
-            fill: var(--color--white);
+            fill: var(--color--primary);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: var(--color--primary) !important;
+            svg {
+                fill: var(--color--white);
+            }
         }
     }
 }

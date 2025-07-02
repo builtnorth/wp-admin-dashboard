@@ -1,101 +1,112 @@
-.geocoder-container {
-    z-index: 3;
-    position: relative;
-    margin-bottom: 1.5rem !important;
-    label {
-        font-size: 11px;
-        font-weight: 500;
-        line-height: 1.4;
-        text-transform: uppercase;
-        display: inline-block;
-        margin-bottom: calc(8px);
-        padding: 0px;
-    }
-    input {
-        border: 1px solid #949494;
-        border-radius: 2px;
-        box-shadow: 0 0 0 #0000;
-        font-size: 13px;
-        height: 32px;
-        line-height: normal;
-        margin: 0;
-        padding: 6px 8px 6px 30px;
-        transition: box-shadow 0.1s linear;
-        width: 100%;
-        &:focus {
-            border-color: var(--color--primary);
-            box-shadow: 0 0 0 0.5px var(--color--primary);
-            outline: 2px solid #0000;
+/*
+------------------------------------------------------------------
+Location Map
+
+@package BuiltNorthWPAdminDashboard
+@since BuiltNorthWPAdminDashboard 1.0.0
+------------------------------------------------------------------
+*/
+
+.polaris-dashboard {
+    .geocoder-container {
+        z-index: 3;
+        position: relative;
+        margin-bottom: 1.5rem !important;
+        label {
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 1.4;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: calc(8px);
+            padding: 0px;
         }
+        input {
+            border: 1px solid #949494;
+            border-radius: 2px;
+            box-shadow: 0 0 0 #0000;
+            font-size: 13px;
+            height: 32px;
+            line-height: normal;
+            margin: 0;
+            padding: 6px 8px 6px 30px;
+            transition: box-shadow 0.1s linear;
+            width: 100%;
+            &:focus {
+                border-color: var(--color--primary);
+                box-shadow: 0 0 0 0.5px var(--color--primary);
+                outline: 2px solid #0000;
+            }
+        }
+
+        .mapboxgl-ctrl-geocoder {
+            width: 100%;
+            max-width: none;
+            box-shadow: none;
+        }
+
+        .mapboxgl-ctrl-geocoder--icon-search {
+            top: 6px;
+        }
+
+        // .mapboxgl-ctrl-geocoder--icon-close {
+        //     margin-top: 9px;
+        // }
     }
 
-    .mapboxgl-ctrl-geocoder {
-        width: 100%;
-        max-width: none;
-        box-shadow: none;
-    }
-
-    .mapboxgl-ctrl-geocoder--icon-search {
-        top: 6px;
-    }
-
-    // .mapboxgl-ctrl-geocoder--icon-close {
-    //     margin-top: 9px;
-    // }
-}
-
-.location-map-wrap {
-    .map-container {
-        height: 350px;
-        z-index: 1;
-    }
-    @media only screen and (max-width: 1100px) {
-        grid-template-columns: 1fr;
+    .location-map-wrap {
         .map-container {
-            height: 300px;
+            height: 350px;
+            z-index: 1;
+        }
+        @media only screen and (max-width: 1100px) {
+            grid-template-columns: 1fr;
+            .map-container {
+                height: 300px;
+            }
         }
     }
-}
 
-.map-panel-row {
-    align-items: center;
-}
-
-.address-info {
-    margin-bottom: 1.25rem;
-    background: var(--color--base);
-    border: 1px solid var(--color--border-gray);
-    padding: 1.25rem 1rem;
-    h3 {
-        font-family: monospace;
+    .map-panel-row {
+        align-items: center;
     }
-    p {
-        font-size: 11px;
-        font-family: monospace;
+
+    .address-info {
+        margin-bottom: 1.25rem;
+        background: var(--color--base);
+        border: 1px solid var(--color--border-gray);
+        padding: 1.25rem 1rem;
+        h3 {
+            font-family: monospace;
+        }
+        p {
+            font-size: 11px;
+            font-family: monospace;
+            margin: 0;
+        }
+    }
+
+    .map-stats {
+        background: var(--color--base);
+        padding: 4px 8px;
         margin: 0;
-    }
-}
-
-.map-stats {
-    background: var(--color--base);
-    padding: 4px 8px;
-    margin: 0;
-    li {
-        margin: 0 10px 0 0;
-        font-size: 11px;
-        font-family: monospace;
-        display: inline-block;
-        span {
-            font-weight: 700;
-        }
-        &:after {
-            content: " | ";
-            opacity: 0.25;
-        }
-        &:last-child {
-            margin-right: 0;
+        li {
+            margin: 0 10px 0 0;
+            font-size: 11px;
+            font-family: monospace;
+            display: inline-block;
+            span {
+                font-weight: 700;
+            }
             &:after {
-                display: none;
+                content: " | ";
+                opacity: 0.25;
+            }
+            &:last-child {
+                margin-right: 0;
+                &:after {
+                    display: none;
+                }
             }
         }
     }

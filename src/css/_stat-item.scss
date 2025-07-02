@@ -1,32 +1,43 @@
-.dashboard-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--color--base);
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+/*
+------------------------------------------------------------------
+Stat Item
 
-    p {
-        margin: 0;
-    }
+@package BuiltNorthWPAdminDashboard
+@since BuiltNorthWPAdminDashboard 1.0.0
+------------------------------------------------------------------
+*/
 
-    &__title {
-        font-size: 1rem;
-        font-weight: 600;
+.polaris-dashboard {
+    .dashboard-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+        background-color: var(--color--base);
+        margin-top: 0.5rem;
         margin-bottom: 0.5rem;
-    }
 
-    &__number {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        color: var(--color--primary);
-    }
+        p {
+            margin: 0;
+        }
 
-    &__description {
-        font-size: 0.75rem;
+        &__title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        &__number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--color--primary);
+        }
+
+        &__description {
+            font-size: 0.75rem;
+        }
     }
 }

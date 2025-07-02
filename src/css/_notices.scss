@@ -7,8 +7,10 @@ Notices
 ------------------------------------------------------------------
 */
 
-// Snackbar Notifications
-.components-snackbar-list {
-    bottom: 1rem;
-    position: fixed;
+.polaris-dashboard {
+    // Snackbar Notifications
+    .components-snackbar-list {
+        bottom: 1rem;
+        position: fixed;
+    }
 }
