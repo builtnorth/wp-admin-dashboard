@@ -7,6 +7,10 @@ Main Styles for BuiltNorthWPAdminDashboard
 */
 
 .polaris-dashboard {
+    #wpfooter {
+        position: relative !important;
+    }
+
     // Global Styles
     img {
         width: 100%;
@@ -206,9 +210,6 @@ Main Styles for BuiltNorthWPAdminDashboard
     }
 
     .polaris-dashboard-panel {
-        margin-bottom: 0;
-        flex: 0 1 auto;
-
         &__card {
             margin-left: 0.75rem;
             margin-right: 0.75rem;
@@ -264,13 +265,16 @@ Main Styles for BuiltNorthWPAdminDashboard
         }
 
         .built-tab {
-            height: auto;
             flex-direction: column;
             display: flex;
             padding: 0 0 0.5rem 0;
 
             &.is-active-tab:after {
                 height: 3px;
+            }
+
+            &button {
+                height: 30px !important;
             }
         }
 
@@ -450,9 +454,6 @@ Main Styles for BuiltNorthWPAdminDashboard
 }
 
 .polaris-dashboard-panel {
-    margin-bottom: 0;
-    flex: 0 1 auto;
-
     &__card {
         margin-left: 0.75rem;
         margin-right: 0.75rem;

@@ -8,6 +8,10 @@ Location Map
 */
 
 .polaris-dashboard {
+    .address-search-container {
+        z-index: 10;
+        margin-bottom: 30px;
+    }
     .geocoder-container {
         z-index: 3;
         position: relative;
