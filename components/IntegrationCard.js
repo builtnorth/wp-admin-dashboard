@@ -77,6 +77,7 @@ const IntegrationCard = memo(
                         return (
                             <InputControl
                                 label={field.label}
+                                placeholder={field.placeholder}
                                 type="password"
                                 value={value}
                                 onChange={(newValue) =>
@@ -88,6 +89,7 @@ const IntegrationCard = memo(
                         return (
                             <TextControl
                                 label={field.label}
+                                placeholder={field.placeholder}
                                 value={value}
                                 onChange={(newValue) =>
                                     updateIntegrationSetting(key, newValue)

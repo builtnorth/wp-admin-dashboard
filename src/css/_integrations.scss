@@ -37,6 +37,9 @@ Brand Settings
 
     .is-page-select {
         align-items: flex-start;
+        flex-grow: 1;
+        margin-top: auto;
+        margin-bottom: 1rem;
         &-button {
             margin-top: 32px;
         }

@@ -12,8 +12,13 @@ Business Hours
         padding-bottom: 0.75rem;
     }
 
+    .components-panel__row > div {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     .business-hours {
-        justify-content: flex-start;
+        align-items: center;
         position: relative;
         padding-bottom: 0.75rem;
         padding-top: 0.75rem;
@@ -22,11 +27,16 @@ Business Hours
             content: "";
             border-top: 1px dashed var(--color--border-gray);
             position: absolute;
-            width: calc(100% - 2.5rem);
+            width: 100%;
             top: -5px;
             left: 0;
             right: 0;
             margin: 0 auto;
+        }
+        &:first-child {
+            &:after {
+                display: none;
+            }
         }
 
         &__time-group {
@@ -55,22 +65,7 @@ Business Hours
         }
 
         .components-toggle-control {
-            margin-bottom: 0;
             padding-left: 1rem;
-        }
-    }
-
-    .business-hours .components-toggle-control {
-        margin-bottom: 0.25rem;
-    }
-
-    .business-hours__time {
-        .components-datetime__time {
-            .components-datetime__time-field-day,
-            .components-datetime__time-field-year,
-            .components-datetime__time-field-month {
-                display: none;
-            }
         }
     }
 }

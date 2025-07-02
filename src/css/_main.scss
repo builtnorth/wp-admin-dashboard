@@ -149,7 +149,6 @@ Main Styles for BuiltNorthWPAdminDashboard
         background: none;
         border: none;
         width: 100%;
-        margin-bottom: 1.5rem;
     }
 
     .panel-description {
@@ -157,8 +156,12 @@ Main Styles for BuiltNorthWPAdminDashboard
     }
 
     .components-card {
-        margin-bottom: 1.5rem;
         width: 100%;
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     .components-flex-block {
@@ -398,11 +401,6 @@ Main Styles for BuiltNorthWPAdminDashboard
 
 .panel-description {
     margin-bottom: 1.5rem;
-}
-
-.components-card {
-    margin-bottom: 1.5rem;
-    width: 100%;
 }
 
 .components-flex-block {
@@ -714,5 +712,19 @@ Main Styles for BuiltNorthWPAdminDashboard
             width: 100%;
             height: auto;
         }
+    }
+}
+
+.is-absolute-combo-control {
+    .components-base-control {
+        position: relative;
+        z-index: 10;
+        margin-top: 80px;
+    }
+    .components-base-control__field {
+        position: absolute;
+        top: -62px;
+        width: 100%;
+        background-color: #fff;
     }
 }
