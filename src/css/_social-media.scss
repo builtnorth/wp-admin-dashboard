@@ -8,8 +8,6 @@ Social Media
 */
 
 .social-media {
-    margin-top: 1rem;
-    background-color: #f8f8f8 !important;
     &__icon {
         position: relative;
         right: -21px;
@@ -22,61 +20,5 @@ Social Media
             max-width: 30px;
             padding: 0 10px;
         }
-    }
-
-    &.components-card {
-        margin-bottom: 2.75rem;
-        position: relative;
-    }
-    .components-card__body {
-        padding-top: 36px;
-    }
-
-    .social-media__toolbar {
-        position: absolute;
-        top: -16px;
-    }
-
-    .components-toolbar {
-        min-height: 36px;
-        height: 36px;
-        border: none;
-
-        svg {
-            height: 18px;
-            width: 18px;
-        }
-    }
-
-    .components-toolbar .components-toolbar.components-toolbar {
-        border: 1px solid #d6d7d7;
-        background-color: #ffffff;
-        margin-right: -1px;
-    }
-    .components-accessible-toolbar .components-button.has-icon.has-icon,
-    .components-toolbar .components-button.has-icon.has-icon {
-        min-height: 36px;
-        height: 36px;
-    }
-
-    &__url {
-        &.is-disabled {
-            opacity: 0.75;
-        }
-    }
-
-    > div {
-        width: 100%;
-    }
-
-    .components-combobox-control__suggestions-container {
-        background-color: var(--color--white);
-        position: relative;
-    }
-    .components-form-token-field__suggestions-list {
-        z-index: 99;
-        position: absolute;
-        top: 32px;
-        background-color: var(--color--white);
     }
 }
